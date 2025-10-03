@@ -4,12 +4,9 @@ name: Fetch SAP Integration Suite Cookies for Sharepoint Automation
 on:
   schedule:
     # - cron: '30 2 * * *'  # 8:00 AM IST = 2:30 AM UTC
-    # - cron: '0 4 * * *'  # 9:30 AM IST = 4:0 AM UTC
-    - cron: '10 6 * * *'  # ⏰ 11:40 AM IST (06:10 UTC)
+    - cron: "0 11 * * *"
+    # - cron: '10 6 * * *'  # ⏰ 11:40 AM IST (06:10 UTC)
 
-    # - cron: '45 6 * * *'  # ⏰ Dispatch Time: 11:50 AM IST (UTC+5:30)
-    #Dummy Commit
-    #Dummy Commit 
   workflow_dispatch:       # Manual trigger
 
 jobs:
@@ -34,27 +31,7 @@ jobs:
         with:
           chrome-version: 'stable'
 
-            # --- Before running Selenium, add a debug step ---
-      - name: Print environment variables for debugging
-        run: |
-          echo "DEV URL: $TARGET_URL"
-          echo "UAT URL: $UAT_URL"
-          echo "PROD URL: $PROD_URL"
-          echo "LOGIN USERNAME: $LOGIN_USERNAME"
-          echo "SAP Endpoint: $SAP_IS_ENDPOINT"
-          echo "SAP Username: $SAP_IS_USERNAME"
-          # Do NOT echo passwords in logs
-        env:
-          TARGET_URL: ${{ secrets.DEV_URL }}
-          UAT_URL: ${{ secrets.UAT_URL }}
-          PROD_URL: ${{ secrets.PROD_URL }}
-          LOGIN_USERNAME: ${{ secrets.LOGIN_USERNAME }}
-          LOGIN_PASSWORD: ${{ secrets.LOGIN_PASSWORD }}
-          SAP_IS_ENDPOINT: ${{ secrets.SAP_IS_ENDPOINT }}
-          SAP_IS_USERNAME: ${{ secrets.SAP_IS_USERNAME }}
-          SAP_IS_PASSWORD: ${{ secrets.SAP_IS_PASSWORD }}
-
-
+      
       # --- DEV Tenant ---
       - name: Run Selenium for DEV Environment
         id: dev_selenium

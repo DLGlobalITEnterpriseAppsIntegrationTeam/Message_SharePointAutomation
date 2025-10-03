@@ -4,7 +4,7 @@ name: Fetch SAP Integration Suite Cookies for Sharepoint Automation
 on:
   schedule:
     # - cron: '30 2 * * *'  # 8:00 AM IST = 2:30 AM UTC
-    - cron: "0 12 * * *"
+    - cron: "30 12 * * *"
     # - cron: '10 6 * * *'  # ⏰ 11:40 AM IST (06:10 UTC)
 
   workflow_dispatch:       # Manual trigger

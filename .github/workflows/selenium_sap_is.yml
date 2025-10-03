@@ -1,5 +1,5 @@
 
-name: Fetch SAP Integration Suite Cookies
+name: Fetch SAP Integration Suite Cookies for sharepoint automation
 
 on:
   schedule:

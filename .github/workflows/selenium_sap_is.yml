@@ -7,7 +7,7 @@ on:
     - cron: "30 12 * * *"
     
     # - cron: '10 6 * * *'  # ⏰ 11:40 AM IST (06:10 UTC)
-
+#Manual trigger 
   workflow_dispatch:       # Manual trigger
 
 jobs:
